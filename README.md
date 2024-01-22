@@ -23,7 +23,7 @@ To automate this process, I employ a combination of Python and VBA. Specifically
 - **Python:** Primarily used to execute VBA code within Excel and generate new email messages via Outlook. 
 - **VBA:** Responsible for tasks such as copying data from CSV files, iterating through duplicated accounts, and subsequently saving the new files in specified directories.
   
-#Please note, for this project both VBA and Python script automaticly using the latest avilible file in our folders.#
+*Please note, for this project, both VBA and Python script automaticly using the latest avilible file in our folders*
 
 # Workflow
 
