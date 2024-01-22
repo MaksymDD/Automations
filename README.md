@@ -1,3 +1,5 @@
+## PROJECT: REMOVING DUPLICATES 
+
 Hello, welcome to this automation project rooted in real-world work experiences—tasks routinely carried out by middle offices worldwide. 
 These are the types of activities that can be easily automated, resulting in significant time savings.
 
