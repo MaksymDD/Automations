@@ -25,21 +25,39 @@ To automate this process, I employ a combination of Python and VBA. Specifically
 
 # Workflow
 
-First, let me provide part of python that is responsible for opening Excel file and running macro. 
+First, let me provide a snippet of Python code that opens an Excel file and runs a macro.
 
 ```python
 import win32com.client
 import os
+import xlwings as xw #
 
-import xlwings as xw
-
-# Open the Excel workbook
+#Path to the Excel file with VBA.
 wb = xw.Book(r"C:\Offile Desktop\Study Material\Python\Projects\VBA+Python\Data\VBA_dup.xlsm")
 
-# Use the 'run' method to execute the macro
-wb.macro('FullComb.ImportLatestCSVData').run()
-wb.macro('FullComb.ConsolidateAndDeleteDuplicates').run()
-wb.macro('FullComb.SaveAsCSVWithDynamicName').run()
+# Execution of macro with comman 'run'
+wb.macro('FullComb.ImportCSVData').run() 
+wb.macro('FullComb.Duplicates').run()
+wb.macro('FullComb.SaveCSV').run()
 wb.close()
+```
+
+Now let's us move to VBA script. As you can see above, my VBA is divided in to 3 different Sub:
+
+1. Sub that import data from folder with CSV file and duplicated accounts 
+
+```vba
+'Check if a CSV file was found
+    If latestCSVFile <> "" Then
+        ' Clear existing data in the worksheet
+        ws.Cells.Clear
+
+        ' Import data from the latest CSV file column by column
+        For columnCounter = 1 To 1
+            ImportColumnFromCSV latestCSVFile, ws, columnCounter
+        Next columnCounter
+```
+
+
 
 
