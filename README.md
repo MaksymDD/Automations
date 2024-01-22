@@ -23,5 +23,23 @@ To automate this process, I employ a combination of Python and VBA. Specifically
 - **Python:** Primarily used to execute VBA code within Excel and generate new email messages via Outlook.
 - **VBA:** Responsible for tasks such as copying data from CSV files, iterating through duplicated accounts, and subsequently saving the new files in specified directories.
 
+# Workflow
+
+First, let me provide part of python that is responsible for opening Excel file and running macro. 
+
+```python
+import win32com.client
+import os
+
+import xlwings as xw
+
+# Open the Excel workbook
+wb = xw.Book(r"C:\Offile Desktop\Study Material\Python\Projects\VBA+Python\Data\VBA_dup.xlsm")
+
+# Use the 'run' method to execute the macro
+wb.macro('FullComb.ImportLatestCSVData').run()
+wb.macro('FullComb.ConsolidateAndDeleteDuplicates').run()
+wb.macro('FullComb.SaveAsCSVWithDynamicName').run()
+wb.close()
 
 
