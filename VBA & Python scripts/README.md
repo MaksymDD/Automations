@@ -58,6 +58,5 @@ Sub SaveCSV()
 End Sub
 ```
 
-## Make sure you have your CSV file with diplicated accounts saved on your computer.
+## Make sure you have your CSV file with diplicated accounts saved on your computer. This file could be found in folder named *'CSV with duplicated accounts'*
 
-[`CSV with duplicated accounts`](VBA%20%26%20Python%20scripts/CSV%20with%20duplicated%20accounts/).
