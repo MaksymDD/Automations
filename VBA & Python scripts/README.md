@@ -60,4 +60,4 @@ End Sub
 
 ## Make sure you have your CSV file with diplicated accounts saved on your computer.
 
-[`accounts_duplicated #1.csv`](CSV%20with%20duplicated%20accounts/accounts_duplicated%20%231.csv).
+[`accounts_duplicated #1.csv`](VBA%20%26%20Python%20scripts/CSV%20with%20duplicated%20accounts/accounts_duplicated%20%231.csv).
