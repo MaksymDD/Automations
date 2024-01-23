@@ -3,8 +3,7 @@
 Hello, welcome to this automation project rooted in real-world work experiences—tasks routinely carried out by middle offices worldwide. 
 These are the types of activities that can be easily automated, resulting in significant time savings.
 
-An important note: you may find that this project is somewhat intricate, and certain aspects could be optimized for greater efficiency. 
-However, as mentioned earlier, this project is a reflection of my work experience. I've intentionally added a touch of complexity to my tasks to make the process more enjoyable.
+An important note: you may find that this project is somewhat intricate, and certain aspects could be optimized for greater efficiency, however, I've intentionally added a touch of complexity to my tasks to make the process more enjoyable.
 
 # Project Description
 
@@ -23,7 +22,34 @@ To automate this process, I employ a combination of Python and VBA. Specifically
 - **Python:** Primarily used to execute VBA code within Excel and generate new email messages via Outlook. 
 - **VBA:** Responsible for tasks such as copying data from CSV files, iterating through duplicated accounts, and subsequently saving the new files in specified directories.
   
-*Please note, for this project, both VBA and Python script automaticly using the latest avilible file in our folders*
+*Please note, for this project, both VBA and Python script are using the latest avilible file in our folders*
+
+Below snippet from VBA 
+
+```vba
+    ' Loop through files in the folder
+    Do While fileName <> ""
+        currentFile = folderPath & fileName
+
+        ' Check if the file is a CSV file and if its date is later than the current latest date
+        If UCase(Right(fileName, 4)) = ".CSV" And FileDateTime(currentFile) > latestDate Then
+            latestDate = FileDateTime(currentFile)
+            GetLatestCSVFile = currentFile
+        End If
+
+        ' Get the next file
+        fileName = Dir
+    Loop
+End Function
+```
+
+& Python:
+
+```python
+latest_csv_file = max([f for f in os.listdir(folder_path) if f.lower().endswith('.csv')],
+                      key=lambda x: os.path.getctime(os.path.join(folder_path, x)))
+```
+
 
 # Workflow
 
@@ -31,7 +57,7 @@ To automate this process, I employ a combination of Python and VBA. Specifically
 
 First, let me provide a snippet of Python code that opens an Excel file and runs a macro.
 
-```python
+```vba
 import win32com.client
 import os
 import xlwings as xw #
@@ -45,6 +71,7 @@ wb.macro('FullComb.Duplicates').run()
 wb.macro('FullComb.SaveCSV').run()
 wb.close()
 ```
+
 
 **PART 2**
 
@@ -120,7 +147,7 @@ End Sub
 
 **PART 3**
 
-Once we have executed our VBAs, let's proceed to the final step — preparing a new email message in Outlook with our new CSV file, free of duplicates. Thos part will be done using Python script, and win32com module. 
+Once we have executed our VBAs, let's proceed to the final step — preparing a new email message in Outlook with our new CSV file, free of duplicated accounts. Thos part will be done using Python script, and win32com module. 
 
 ```python
 # Get the latest CSV file in the folder
@@ -148,5 +175,4 @@ mail_item.Attachments.Add(attachment_path)
 # Display email
 mail_item.Display()
 ```
-
 
