@@ -176,3 +176,26 @@ mail_item.Attachments.Add(attachment_path)
 mail_item.Display()
 ```
 
+
+# Outputs
+
+*List of accounts before execution of VBA:*
+
+<img width="249" alt="Duplicates" src="https://github.com/MaksymDD/Duplicates_Project/assets/156451919/67813c80-70b8-4de0-b5c6-d958e18f55e9">
+
+
+*List of accounts after execution of VBA:*
+
+<img width="232" alt="CleanedUp" src="https://github.com/MaksymDD/Duplicates_Project/assets/156451919/a55c4782-8276-4605-ad14-5868404be077">
+
+
+*New CSV file with dynamic name:*
+
+<img width="487" alt="New File" src="https://github.com/MaksymDD/Duplicates_Project/assets/156451919/254e5635-4a2d-4820-8854-164553f473f4">
+
+
+*Outlook email:*
+
+<img width="444" alt="outlook email" src="https://github.com/MaksymDD/Duplicates_Project/assets/156451919/1fee965e-297f-44de-85d8-29059e124480">
+
+
